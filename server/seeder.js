@@ -1,15 +1,11 @@
 Meteor.startup(function() {
-	Factory.define('message', Messages, {
-		text: function(){
-			return Fake.sentence()
-		}
-	});
-	
 	Messages.remove({});
 	
-	if(Messages.find({}).count() === 0){
-		_(10).times(function(n){
-			Factory.create('message');
-		});
-	}
+	Channels.remove({});
+	Channels.insert({name: 'lbrain1'});
+	Channels.insert({name: 'lbrain2'});
+	Channels.insert({name: 'lbrain3'});
+	Channels.insert({name: 'lbrain4'});
+	
+	
 });
